@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Sayangku ❤️</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .dancing-font {
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .floating-heart {
+            position: fixed;
+            color: rgba(255, 255, 255, 0.3);
+            animation: float 6s ease-in-out infinite;
+            z-index: 1;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+        
+        .heart-rain {
+            position: fixed;
+            color: rgba(255, 192, 203, 0.8);
+            animation: fall linear;
+            z-index: 1;
+        }
+        
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+        
+        .glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073; }
+            to { box-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6; }
+        }
+        
+        .photo-frame {
+            border: 10px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .photo-frame:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+        
+        .love-button {
+            background: linear-gradient(45deg, #ff6b6b, #ff8787);
+            transition: all 0.3s ease;
+        }
+        
+        .love-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.4);
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 3s steps(30, end);
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Hearts Background -->
+    <div id="heartsContainer"></div>
+    
+    <!-- Main Container -->
+    <div class="container mx-auto px-4 py-8 relative z-10">
+        <!-- Landing Section -->
+        <section id="landing" class="min-h-screen flex items-center justify-center">
+            <div class="text-center text-white">
+                <h1 class="dancing-font text-6xl md:text-8xl mb-4 pulse">Untuk Sayangku</h1>
+                <p class="text-xl md:text-2xl mb-8 fade-in">Kamu adalah anugerah terindah dalam hidupku</p>
+                <button onclick="showMainContent()" class="love-button text-white px-8 py-4 rounded-full text-lg font-semibold hover:scale-105 transition">
+                    <i class="fas fa-heart mr-2"></i> Buka Pesan Cinta
+                </button>
+            </div>
+        </section>
+        
+        <!-- Main Content (Hidden Initially) -->
+        <section id="mainContent" class="hidden">
+            <!-- Love Message Section -->
+            <div class="bg-white rounded-3xl p-8 md:p-12 mb-8 fade-in shadow-2xl">
+                <h2 class="dancing-font text-4xl md:text-5xl text-purple-600 mb-6 text-center">Pesan Dariku untukmu</h2>
+                <div class="max-w-3xl mx-auto">
+                    <div class="bg-pink-50 rounded-xl p-6 mb-6">
+                        <p class="text-gray-700 text-lg leading-relaxed mb-4">
+                            Sayangku,<br><br>
+                            Setiap hari bersamamu adalah hadiah yang tak ternilai. Senyummu bisa mencerahkan hari paling kelam sekalipun, 
+                            dan tawamu adalah melodi terindah yang pernah aku dengar.
+                        </p>
+                        <p class="text-gray-700 text-lg leading-relaxed mb-4">
+                            Terima kasih telah menjadi sahabat, pendukung, dan cinta sejati dalam hidupku. 
+                            Aku berjanji akan selalu ada di sisimu, dalam suka maupun duka, 
+                            sampai waktu berhenti berdetak.
+                        </p>
+                        <p class="text-gray-700 text-lg leading-relaxed">
+                            I love you more than words can express.<br>
+                            <span class="dancing-font text-2xl text-pink-500">Forever yours, ❤️</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Photo Gallery Section -->
+            <div class="bg-white rounded-3xl p-8 md:p-12 mb-8 fade-in shadow-2xl">
+                <h2 class="dancing-font text-4xl md:text-5xl text-purple-600 mb-8 text-center">Kenangan Indah Kita</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="photo-frame rounded-lg overflow-hidden cursor-pointer" onclick="showPhotoModal('https://picsum.photos/seed/love1/400/400.jpg')">
+                        <img src="https://picsum.photos/seed/love1/400/400.jpg" alt="Memory 1" class="w-full h-64 object-cover">
+                        <div class="bg-white p-4 text-center">
+                            <p class="font-semibold text-gray-700">Pertemuan Pertama</p>
+                        </div>
+                    </div>
+                    <div class="photo-frame rounded-lg overflow-hidden cursor-pointer" onclick="showPhotoModal('https://picsum.photos/seed/love2/400/400.jpg')">
+                        <img src="https://picsum.photos/seed/love2/400/400.jpg" alt="Memory 2" class="w-full h-64 object-cover">
+                        <div class="bg-white p-4 text-center">
+                            <p class="font-semibold text-gray-700">Kencan Pertama</p>
+                        </div>
+                    </div>
+                    <div class="photo-frame rounded-lg overflow-hidden cursor-pointer" onclick="showPhotoModal('https://picsum.photos/seed/love3/400/400.jpg')">
+                        <img src="https://picsum.photos/seed/love3/400/400.jpg" alt="Memory 3" class="w-full h-64 object-cover">
+                        <div class="bg-white p-4 text-center">
+                            <p class="font-semibold text-gray-700">Perayaan Ulang Tahun</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Love Calculator Section -->
+            <div class="bg-white rounded-3xl p-8 md:p-12 mb-8 fade-in shadow-2xl">
+                <h2 class="dancing-font text-4xl md:text-5xl text-purple-600 mb-6 text-center">Kalkulator Cinta Kita</h2>
+                <div class="max-w-md mx-auto">
+                    <div class="mb-4">
+                        <input type="text" id="name1" placeholder="Nama Kamu" class="w-full px-4 py-3 border-2 border-pink-300 rounded-lg focus:outline-none focus:border-pink-500 mb-4">
+                        <input type="text" id="name2" placeholder="Nama Pasangan" class="w-full px-4 py-3 border-2 border-pink-300 rounded-lg focus:outline-none focus:border-pink-500 mb-4">
+                    </div>
+                    <button onclick="calculateLove()" class="love-button w-full text-white py-3 rounded-lg font-semibold">
+                        <i class="fas fa-heart mr-2"></i>Hitung Kecocokan Cinta
+                    </button>
+                    <div id="loveResult" class="mt-6 text-center hidden">
+                        <div class="text-6xl mb-2" id="lovePercentage"></div>
+                        <p class="text-xl font-semibold text-pink-600" id="loveMessage"></p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Special Date Countdown -->
+            <div class="bg-white rounded-3xl p-8 md:p-12 mb-8 fade-in shadow-2xl">
+                <h2 class="dancing-font text-4xl md:text-5xl text-purple-600 mb-6 text-center">Hitung Mundur Hari Spesial</h2>
+                <div class="max-w-md mx-auto">
+                    <input type="date" id="specialDate" class="w-full px-4 py-3 border-2 border-purple-300 rounded-lg focus:outline-none focus:border-purple-500 mb-4">
+                    <input type="text" id="eventName" placeholder="Nama Acara" class="w-full px-4 py-3 border-2 border-purple-300 rounded-lg focus:outline-none focus:border-purple-500 mb-4">
+                    <button onclick="startCountdown()" class="bg-purple-600 hover:bg-purple-700 w-full text-white py-3 rounded-lg font-semibold transition">
+                        <i class="fas fa-clock mr-2"></i>Mulai Hitung Mundur
+                    </button>
+                    <div id="countdownDisplay" class="mt-6 text-center hidden">
+                        <p class="text-lg font-semibold text-gray-700 mb-2" id="countdownEvent"></p>
+                        <div class="grid grid-cols-4 gap-2">
+                            <div class="bg-purple-100 rounded-lg p-3">
+                                <div class="text-2xl font-bold text-purple-600" id="days">0</div>
+                                <div class="text-xs text-gray-600">Hari</div>
+                            </div>
+                            <div class="bg-purple-100 rounded-lg p-3">
+                                <div class="text-2xl font-bold text-purple-600" id="hours">0</div>
+                                <div class="text-xs text-gray-600">Jam</div>
+                            </div>
+                            <div class="bg-purple-100 rounded-lg p-3">
+                                <div class="text-2xl font-bold text-purple-600" id="minutes">0</div>
+                                <div class="text-xs text-gray-600">Menit</div>
+                            </div>
+                            <div class="bg-purple-100 rounded-lg p-3">
+                                <div class="text-2xl font-bold text-purple-600" id="seconds">0</div>
+                                <div class="text-xs text-gray-600">Detik</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Love Quotes Section -->
+            <div class="bg-white rounded-3xl p-8 md:p-12 mb-8 fade-in shadow-2xl">
+                <h2 class="dancing-font text-4xl md:text-5xl text-purple-600 mb-6 text-center">Kutipan Cinta</h2>
+                <div class="max-w-2xl mx-auto text-center">
+                    <div class="bg-gradient-to-r from-pink-100 to-purple-100 rounded-xl p-6">
+                        <i class="fas fa-quote-left text-3xl text-pink-400 mb-4"></i>
+                        <p class="text-xl text-gray-700 italic mb-4" id="quoteText">"Cinta sejati bukan tentang menyatukan dua orang sempurna, tetapi tentang menyatukan dua jiwa yang tidak sempurna dengan sempurna."</p>
+                        <i class="fas fa-quote-right text-3xl text-pink-400 mt-4"></i>
+                    </div>
+                    <button onclick="getNewQuote()" class="mt-6 love-button text-white px-6 py-3 rounded-full">
+                        <i class="fas fa-sync mr-2"></i>Kutipan Lain
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Photo Modal -->
+    <div id="photoModal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center p-4">
+        <div class="relative max-w-4xl w-full">
+            <img id="modalImage" src="" alt="Full size photo" class="w-full rounded-lg">
+            <button onclick="closePhotoModal()" class="absolute top-4 right-4 text-white text-3xl hover:text-gray-300">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+    
+    <script>
+        // Initialize floating hearts
+        function createFloatingHearts() {
+            const container = document.getElementById('heartsContainer');
+            for(let i = 0; i < 15; i++) {
+                const heart = document.createElement('i');
+                heart.className = 'fas fa-heart floating-heart';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.top = Math.random() * 100 + '%';
+                heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                container.appendChild(heart);
+            }
+        }
+        
+        // Create heart rain effect
+        function createHeartRain() {
+            setInterval(() => {
+                const heart = document.createElement('i');
+                heart.className = 'fas fa-heart heart-rain';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.fontSize = Math.random() * 15 + 10 + 'px';
+                heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+                document.body.appendChild(heart);
+                
+                setTimeout(() => {
+                    heart.remove();
+                }, 5000);
+            }, 300);
+        }
+        
+        // Show main content
+        function showMainContent() {
+            document.getElementById('landing').classList.add('hidden');
+            document.getElementById('mainContent').classList.remove('hidden');
+            createHeartRain();
+        }
+        
+        // Show photo modal
+        function showPhotoModal(src) {
+            document.getElementById('modalImage').src = src;
+            document.getElementById('photoModal').classList.remove('hidden');
+        }
+        
+        // Close photo modal
+        function closePhotoModal() {
+            document.getElementById('photoModal').classList.add('hidden');
+        }
+        
+        // Calculate love percentage
+        function calculateLove() {
+            const name1 = document.getElementById('name1').value;
+            const name2 = document.getElementById('name2').value;
+            
+            if (!name1 || !name2) {
+                alert('Mohon masukkan kedua nama!');
+                return;
+            }
+            
+            // Generate random love percentage based on names
+            const loveScore = (name1.length + name2.length + 47) % 45 + 55;
+            
+            const resultDiv = document.getElementById('loveResult');
+            const percentageDiv = document.getElementById('lovePercentage');
+            const messageDiv = document.getElementById('loveMessage');
+            
+            resultDiv.classList.remove('hidden');
+            percentageDiv.innerHTML = `<span class="text-pink-500">${loveScore}%</span> ❤️`;
+            
+            let message = '';
+            if (loveScore >= 90) {
+                message = 'Sempurna! Kalian adalah soulmate!';
+            } else if (loveScore >= 80) {
+                message = 'Luar biasa! Cinta kalian sangat kuat!';
+            } else if (loveScore >= 70) {
+                message = 'Hebat! Kalian sangat cocok!';
+            } else if (loveScore >= 60) {
+                message = 'Bagus! Ada potensi yang besar!';
+            } else {
+                message = 'Terus berjuang, cinta butuh perjuangan!';
+            }
+            
+            messageDiv.textContent = message;
+        }
+        
+        // Start countdown
+        let countdownInterval;
+        function startCountdown() {
+            const specialDate = document.getElementById('specialDate').value;
+            const eventName = document.getElementById('eventName').value;
+            
+            if (!specialDate || !eventName) {
+                alert('Mohon pilih tanggal dan masukkan nama acara!');
+                return;
+            }
+            
+            clearInterval(countdownInterval);
+            
+            const targetDate = new Date(specialDate).getTime();
+            
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+                
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById('countdownDisplay').innerHTML = '<p class="text-2xl font-bold text-purple-600">Acara telah tiba! 🎉</p>';
+                    return;
+                }
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').textContent = days;
+                document.getElementById('hours').textContent = hours;
+                document.getElementById('minutes').textContent = minutes;
+                document.getElementById('seconds').textContent = seconds;
+                document.getElementById('countdownEvent').textContent = eventName;
+                
+                document.getElementById('countdownDisplay').classList.remove('hidden');
+            }
+            
+            updateCountdown();
+            countdownInterval = setInterval(updateCountdown, 1000);
+        }
+        
+        // Get new quote
+        const quotes = [
+            "Cinta sejati bukan tentang menyatukan dua orang sempurna, tetapi tentang menyatukan dua jiwa yang tidak sempurna dengan sempurna.",
+            "Dalam hidup, aku belajar bahwa cinta tidak berarti memiliki, cinta berarti membiarkan pergi.",
+            "Cinta adalah ketika kamu menyadari bahwa dia lebih hebat daripada semua keinginanmu.",
+            "Cinta sejati tidak memiliki akhir yang bahagia, cinta sejati tidak pernah berakhir.",
+            "Kamu adalah alasan aku percaya pada cinta sejati.",
+            "Setiap detik bersamamu adalah detik terindah dalam hidupku.",
+            "Cinta kamu adalah hadiah terbesar yang pernah aku terima.",
+            "Aku mencintaimu bukan karena siapa kamu, tetapi karena siapa aku ketika bersamamu.",
+            "Kamu membuat hatiku berdetak lebih cepat dan lebih lambat pada saat yang sama.",
+            "Cinta adalah persahabatan yang telah terbakar."
+        ];
+        
+        function getNewQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById('quoteText').textContent = `"${quotes[randomIndex]}"`;
+        }
+        
+        // Initialize
+        createFloatingHearts();
+    </script>
+</body>
+</html>
